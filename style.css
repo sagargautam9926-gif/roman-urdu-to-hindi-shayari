@@ -1,0 +1,50 @@
+:root {
+  --bg: #e9eef2; --panel: #f8fafb; --ink: #14263a; --muted: #5b6b7a;
+  --line: #c5d0d9; --accent: #0f766e; --accent-ink: #ffffff; --mark: #e0a526;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0d1823; --panel: #14222f; --ink: #e8eef3; --muted: #93a4b3;
+    --line: #28394a; --accent: #3fb8a9; --accent-ink: #062320; --mark: #e0a526;
+  }
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0; background: var(--bg); color: var(--ink);
+  font: 16px/1.6 'Inter', system-ui, sans-serif;
+}
+main { max-width: 980px; margin: 0 auto; padding: 40px 20px 32px; }
+header { margin-bottom: 28px; border-left: 4px solid var(--mark); padding-left: 16px; }
+h1 { margin: 0; font: 400 clamp(2.2rem, 6vw, 3.4rem)/1.2 'Tiro Devanagari Hindi', serif; }
+header p { margin: 4px 0 0; color: var(--muted); }
+.panes { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+@media (max-width: 720px) { .panes { grid-template-columns: 1fr; } }
+.card {
+  background: var(--panel); border: 1px solid var(--line); border-radius: 6px;
+  padding: 18px; display: flex; flex-direction: column; gap: 12px; min-height: 280px;
+}
+label { font-weight: 600; color: var(--muted); font-size: .9rem; }
+textarea, #output {
+  flex: 1; width: 100%; min-height: 150px; margin: 0; padding: 0; border: 0;
+  background: transparent; color: var(--ink); resize: none; outline: none;
+}
+textarea { font: 1.15rem/1.7 'Inter', sans-serif; }
+#output {
+  font: 1.7rem/1.9 'Tiro Devanagari Hindi', serif; white-space: pre-wrap; word-break: break-word;
+}
+#output:empty::before { content: attr(data-ph); color: var(--muted); font-size: 1.1rem; }
+.row { display: flex; gap: 10px; align-items: center; }
+button {
+  font: 600 .95rem 'Inter', sans-serif; padding: 9px 16px; border-radius: 6px; cursor: pointer;
+  border: 1px solid var(--accent); background: var(--accent); color: var(--accent-ink);
+}
+button.ghost { background: transparent; color: var(--accent); }
+button:focus-visible, textarea:focus-visible, a:focus-visible { outline: 3px solid var(--mark); outline-offset: 2px; }
+#msg { color: var(--muted); font-size: .9rem; }
+footer { margin-top: 24px; color: var(--muted); font-size: .9rem; }
+footer a { color: var(--accent); }
+.w { border-bottom: 1px dotted var(--muted); cursor: pointer; }
+.w:hover { background: color-mix(in srgb, var(--mark) 25%, transparent); }
+.w.user { border-bottom: 2px solid var(--accent); }
+.hint { margin: 0; color: var(--muted); font-size: .85rem; }
+button.link { background: none; border: 0; padding: 0; color: var(--accent); text-decoration: underline; font-weight: 400; font-size: .85rem; }

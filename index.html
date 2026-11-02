@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>शायरी लिपि | Roman Urdu to Hindi</title>
+  <meta name="description" content="Convert Roman Urdu / Hinglish shayari into Hindi (Devanagari) instantly.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Tiro+Devanagari+Hindi&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main>
+    <header>
+      <h1>शायरी लिपि</h1>
+      <p>Roman Urdu likho, Hindi mein padho.</p>
+    </header>
+    <div class="panes">
+      <section class="card">
+        <label for="input">Roman Urdu</label>
+        <textarea id="input" placeholder="ishq mein har dard bhi ek saugaat hai" spellcheck="false"></textarea>
+        <div class="row">
+          <button id="sample">Random sher</button>
+          <button id="clear" class="ghost">Clear</button>
+        </div>
+      </section>
+      <section class="card">
+        <label for="output">हिन्दी</label>
+        <div id="output" data-ph="Yahan Hindi output dikhega"></div>
+        <p class="hint">Underline wale words rule se bane hain. Galat lage to click karke theek karo, app yaad rakhega. <button id="reset" class="link">Meri dictionary reset karo</button></p>
+        <div class="row">
+          <button id="copy">Copy</button>
+          <button id="card" class="ghost">Download card</button>
+          <span id="msg" role="status"></span>
+        </div>
+      </section>
+    </div>
+    <footer>Rule-based converter, koi API nahi. Code: <a href="https://github.com/YOUR-USERNAME/roman-urdu-to-hindi-shayari">GitHub</a></footer>
+  </main>
+  <script src="transliterate.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
